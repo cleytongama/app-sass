@@ -8,7 +8,7 @@
  * Resourceful controller for interacting with invites
  */
 class InviteController {
-  async store({ request, auth }) {
+  async store ({ request, auth }) {
     console.log(request.team)
   }
 }
