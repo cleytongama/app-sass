@@ -10,11 +10,13 @@ InviteHook.sendInvitationEmail = async (invite) => {
   const invited = await User.findBy('email', email)
 
   if (invited) {
+    console.log('entrou aqui')
     await invited.teams().attach(invite.team_id)
   } else {
     const user = await invite.user().fetch()
 
     const team = await invite.team().fetch()
+    console.log(user, team, email)
 
     Kue.dispatch(Job.key, { user, team, email }, { attempts: 3 })
   }

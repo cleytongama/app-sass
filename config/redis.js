@@ -33,7 +33,7 @@ module.exports = {
   */
   local: {
     host: '127.0.0.1',
-    port: 32770,
+    port: 32768,
     password: null,
     db: 0,
     keyPrefix: ''
